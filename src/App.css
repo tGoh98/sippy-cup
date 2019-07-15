@@ -1,0 +1,12 @@
+#canvas {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* background-color: #FFCC00; */
+  margin: 0;
+  padding: 0;
+}
+
+#canvas:hover {
+  /* cursor: url("./assets/handCursor.png"), auto; */
+}
