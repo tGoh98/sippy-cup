@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import ReactTypingEffect from 'react-typing-effect';
+import Mug from './Mug';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { x: 0, y: 0 };
+  }
+
+  _onMouseMove(e) {
+    this.setState({ x: e.screenX, y: e.screenY });
+  }
+
+  render() {
+    const { x, y } = this.state;
+    return (
+      <div onMouseMove={this._onMouseMove.bind(this)}>
+        <h1>
+        <ReactTypingEffect
+          text={["Hello.", "World!"]}
+          speed={100}
+          eraseDelay={1000}
+        />
+        </h1>
+        <Mug />
+        <p>Mouse coordinates: { x } { y }</p>
+      </div>
+    );
+  };
 }
-
-export default App;
