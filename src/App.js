@@ -34,7 +34,7 @@ export default class App extends Component {
   }
 
   addMouseCoords(mousePosArr) {
-    // Write mouse position array to db.json
+    // Write mouse position array to json file
     fetch('http://localhost:8080/coords', {
       method: 'POST',
       headers: {
