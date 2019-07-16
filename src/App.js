@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import './App.css';
 import ReactTypingEffect from 'react-typing-effect';
 import Mug from './Mug';
-import MouseCursor from './MouseCursor';
+
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { x: 0, y: 0, mousePosArr: Array(400).fill(0) };
+    this.state = { x: 0, y: 0, mousePosArr: Array(300).fill(0) };
   }
 
   componentDidMount() {
@@ -33,11 +33,16 @@ export default class App extends Component {
     this.setState({ x: e.clientX, y: e.clientY });
   }
 
-  test() {
-    console.log('moused');
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(json => console.log(json));
+  addMouseCoords(mousePosArr) {
+    // Write mouse position array to db.json
+    fetch('http://localhost:8080/coords', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({mousePos: mousePosArr})
+    }).then(response => response.json())
+      .then(json => console.log(json));
   }
 
   render() {
@@ -54,7 +59,7 @@ export default class App extends Component {
           eraseDelay={1000}
         />
         </h1>
-        <Mug mouseEntered={() => this.test()}/>
+        <Mug mouseEntered={() => this.addMouseCoords(this.state.mousePosArr)}/>
         <p>Mouse coordinates: { x } { y }</p>
       </div>
     );

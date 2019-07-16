@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+//not used bc image blocking prevents onmouseover event from triggering
 
 export default class MouseCursor extends Component {
   render() {
