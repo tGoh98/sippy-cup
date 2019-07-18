@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './App.css';
+import { Link } from 'react-router-dom';
+import './Home.css';
 import ReactTypingEffect from 'react-typing-effect';
 import Mug from './Mug';
 import * as tf from '@tensorflow/tfjs';
@@ -44,6 +45,7 @@ export default class App extends Component {
   addMouseCoords(mousePosArr) {
     // FOR COLLECTING TRAINING DATA
     // SWAP WITH THIS STATEMENT
+    // run "json-server --watch [dbname].json --port 8080" from terminal to start the file writing server
     // <Mug mouseEntered={() => this.addMouseCoords(this.state.mousePosArr)}/>
 
     // Write mouse position array to json file
@@ -59,7 +61,6 @@ export default class App extends Component {
 
   detRes(mousePosArr) {
     // Determine hold or spill
-    // let input = mousePosArr.reshape([1, 2, 150]);
     // Format data
     var xs = [];
     var ys = [];
@@ -75,7 +76,9 @@ export default class App extends Component {
     input.push(ys);
     var finalInput = [];
     finalInput.push(input);
-    const prediction = Array.from(this.model.predict(tf.tensor(finalInput)).dataSync());
+    const pred = this.model.predict(tf.tensor(finalInput));
+    // pred.print();
+    const prediction = Array.from(pred.dataSync());
     if (parseInt(prediction) === 0) this.setState({res: 'spill'});
     else this.setState({res: 'hold'});
   }
@@ -97,6 +100,7 @@ export default class App extends Component {
         <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
         <p>Mouse coordinates: { x } { y }</p>
         <p>Result: { res }</p>
+        <Link to='/'>go back</Link>
       </div>
     );
   };
