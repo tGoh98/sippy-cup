@@ -1,19 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Intro from './Intro';
-import Home from './Home';
+import Main from './Main';
 
 const App = () => (
-  <div>
-    <Main />
-  </div>
+    <div>
+      <Main />
+    </div>
 )
-
-const Main = () => (
-      <Switch>
-        <Route exact path='/' component={Intro}></Route>
-        <Route exact path='/home' component={Home}></Route>
-      </Switch>
-    );
 
 export default App;

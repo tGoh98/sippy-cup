@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-// import './Intro.css';
+import './Intro.css';
 
 export default class Intro extends Component {
   render() {
