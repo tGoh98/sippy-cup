@@ -100,7 +100,7 @@ export default class App extends Component {
         <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
         <p>Mouse coordinates: { x } { y }</p>
         <p>Result: { res }</p>
-        <Link to='/'>go back</Link>
+        <Link className="pathLink" to='/'>go back</Link>
       </div>
     );
   };

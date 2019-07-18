@@ -4,5 +4,9 @@
   position: absolute;
   margin: 0;
   padding: 0;
-  cursor: url('../assets/handCursor.png'), auto; /* upload to cdn and update url when finalized */
+  cursor: url('../assets/handCursor.png') 10 10, auto; /* upload to cdn and update url when finalized */
+}
+
+.pathLink:hover {
+  cursor: url('../assets/handCursorActive.png') 10 10, auto;
 }
