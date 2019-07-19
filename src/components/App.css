@@ -1,8 +1,0 @@
-#canvas {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  cursor: url('../assets/handCursor.png'), auto; /* upload to cdn and update url when finalized */
-}

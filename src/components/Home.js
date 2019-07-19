@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import ReactTypingEffect from 'react-typing-effect';
 import Mug from './Mug';
 import * as tf from '@tensorflow/tfjs';
 
@@ -90,13 +89,6 @@ export default class App extends Component {
         id="canvas"
         onMouseMove={this._onMouseMove.bind(this)}
         >
-        <h1>
-        <ReactTypingEffect
-          text={[""]}
-          speed={100}
-          eraseDelay={1000}
-        />
-        </h1>
         <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
         <p>Mouse coordinates: { x } { y }</p>
         <p>Result: { res }</p>
