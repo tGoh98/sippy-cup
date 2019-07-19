@@ -1,0 +1,7 @@
+body {
+  cursor: url('../assets/handCursor.png') 10 10, auto;
+}
+
+a:hover {
+  cursor: url('../assets/handCursorActive.png') 10 10, auto;
+}
