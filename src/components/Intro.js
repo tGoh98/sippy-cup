@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Intro.css';
-import ParticleComponent from "./particleComponent"
-import ReactTypingEffect from 'react-typing-effect';
+import ParticleComponent from "./particleComponent";
+import Typist from 'react-typist';
 
 
 export default class Intro extends Component {
@@ -12,13 +12,12 @@ export default class Intro extends Component {
         <Link to='/home'>next</Link>
         <ParticleComponent />
         <div className="centered">
-          <h1>
-          <ReactTypingEffect
-            text={[""]}
-            speed={100}
-            eraseDelay={1000}
-          />
-          </h1>
+          <Typist className="header"
+                  avgTypingDelay={80}
+                  startDelay={1500}
+                  cursor={{hideWhenDone: true}}>
+            asdf
+          </Typist>
         </div>
       </div>
     );
