@@ -6,6 +6,11 @@ import Intro from './Intro';
 import Home from './Home';
 
 
+const routes = [
+  { path: '/', Component: Intro },
+  { path: '/home', Component: Home }
+]
+
 function Main({ location }) {
   return (
     <TransitionGroup className="transition-group">
@@ -16,8 +21,9 @@ function Main({ location }) {
       >
         <section className="route-section">
           <Switch location={location}>
-            <Route exact path='/' component={Intro}></Route>
-            <Route path='/home' component={Home}></Route>
+            {routes.map(({path,Component}) => (
+              <Route key={path} exact path={path} component={Component}></Route>
+            ))}
           </Switch>
         </section>
       </CSSTransition>
