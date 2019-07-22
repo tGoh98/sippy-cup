@@ -95,20 +95,20 @@ export default class App extends Component {
     return (
       <div className="windowContent">
       <Typing className="instructions"
-              speed={20}
+              speed={1}
               onFinishedTyping={() => this.setState({showContent: true})}
               >
         <p>Welcome to Sippy Cup, a machine learning application.</p>
-        <Typing.Delay ms={500} />
+        <Typing.Delay ms={250} />
         <p>Use your cursor to try and pick up the mug.</p>
-        <Typing.Delay ms={500} />
+        <Typing.Delay ms={250} />
         <p>A neural network will analyze the velocity and trajectory of the cursor<br />
           to determine whether the mug is being picked up or accidentally spilled.</p>
-        <Typing.Delay ms={500} />
+        <Typing.Delay ms={250} />
       </Typing>
 
         { this.state.showContent &&
-          <div>
+          <div className="fadein">
             <AwesomeButton className="buttonReset" type="primary" onPress={() => this.setState({res: 'none'})}>Reset</AwesomeButton>
             <div className="canvas"
               onMouseMove={this._onMouseMove.bind(this)}

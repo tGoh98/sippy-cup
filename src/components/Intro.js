@@ -8,42 +8,30 @@ import "./buttonStyles.css";
 import "react-awesome-button/dist/styles.css"
 
 
-class Button extends Component {
-	componentWillMount() {
-    var that = this;
-    this.setState({visibility: "hidden"});
-		setTimeout(function() {
-			that.show();
-		}, that.props.wait);
-	}
-	show() {
-		this.setState({visibility: "visible"});
-	}
-  render() {
-        return (
-          <div className="fadein" style={{visibility: this.state.visibility}}>
-              <AwesomeButton className="buttonBegin" type="primary"><Link className="linkText" to='/home'>Begin</Link></AwesomeButton>
-          </div>
-        )
-    }
-};
-
-
 export default class Intro extends Component {
+	constructor(props) {
+    super(props);
+
+    this.state = { showButton: false };
+  }
+
   render() {
     return (
       <div className="content">
         <div className="centered">
           <ParticleComponent />
           <Typing className="header"
-                  speed={100}
+                  speed={80}
+									onFinishedTyping={() => this.setState({showButton:true})}
                   >
-            Welcome
-            <Typing.Delay ms={2000} />
+            Welcome to Sippy Cup
+            <Typing.Delay ms={500} />
           </Typing>
-          <div className="centered">
-            <Button wait={1100} />
-          </div>
+          { this.state.showButton &&
+						<div className="centered fadein">
+						<AwesomeButton className="buttonBegin" type="primary"><Link className="linkText" to='/home'>Begin</Link></AwesomeButton>
+          	</div>
+					}
         </div>
       </div>
     );
