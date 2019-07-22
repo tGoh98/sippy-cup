@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Mug from './Mug';
 import * as tf from '@tensorflow/tfjs';
+import { AwesomeButton } from 'react-awesome-button';
+import "./buttonStyles.css";
 
 export default class App extends Component {
   constructor(props) {
@@ -92,7 +94,8 @@ export default class App extends Component {
         <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
         <p>Mouse coordinates: { x } { y }</p>
         <p>Result: { res }</p>
-        <Link className="pathLink" to='/'>go back</Link>
+        <Link className="pathLink" to='/'>go back</Link><br />
+        <AwesomeButton className="buttonReset" type="primary">Reset</AwesomeButton>
       </div>
     );
   };
