@@ -5,6 +5,7 @@ import ParticleComponent from './ParticleComponent';
 import Typing from 'react-typing-animation';
 import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
+import "react-awesome-button/dist/styles.css"
 
 
 class Button extends Component {

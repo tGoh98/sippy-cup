@@ -5,6 +5,7 @@ import Mug from './Mug';
 import * as tf from '@tensorflow/tfjs';
 import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
+import "react-awesome-button/dist/styles.css"
 import Typing from 'react-typing-animation';
 
 export default class App extends Component {
