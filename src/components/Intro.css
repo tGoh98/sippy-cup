@@ -2,22 +2,6 @@ body {
   background-color: #99ccff;
 }
 
-div {
-  position: "absolute";
-  top: 0;
-  left: 0;
-  width: "100%";
-  height: "100%";
-}
-
-button {
-  cursor: url('../assets/handCursorActive.png') 10 10, auto;
-}
-
-button:hover {
-  cursor: url('../assets/handCursorActive.png') 10 10, auto;
-}
-
 .centered {
   margin: auto;
   width: 50%;
@@ -32,4 +16,9 @@ button:hover {
 
 .content {
   padding-top: 150px;
+}
+
+.linkText {
+  text-decoration: none;
+  color: white;
 }

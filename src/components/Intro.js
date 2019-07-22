@@ -21,7 +21,7 @@ class Button extends Component {
   render() {
         return (
           <div className="fadein" style={{visibility: this.state.visibility}}>
-              <AwesomeButton className="buttonBegin" type="primary"><Link style={{ textDecoration: 'none', color: 'white' }} to='/home'>Begin</Link></AwesomeButton>
+              <AwesomeButton className="buttonBegin" type="primary"><Link className="linkText" to='/home'>Begin</Link></AwesomeButton>
           </div>
         )
     }

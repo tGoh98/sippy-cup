@@ -89,19 +89,24 @@ export default class App extends Component {
     const { x, y, res } = this.state;
     return (
       <div className="windowContent">
-        <Typing className="instructions"
-                speed={20}
-                >
-          <p>Welcome to Sippy Cup, a machine learning application.</p>
-          <Typing.Delay ms={500} />
-          <p>Use your cursor to try to pick up the mug.</p>
-          <Typing.Delay ms={500} />
-          <p>A neural network will analyze the velocity and trajectory of the cursor<br />
-            to determine whether the mug is being picked up or accidentally spilled.</p>
-          <Typing.Delay ms={500} />
-          <p>Press the spacebar or click the reset button to start over.</p>
-          <Typing.Delay ms={500} />
-        </Typing>
+      {/*}<Typing className="instructions"
+              speed={20}
+              >
+        <p>Welcome to Sippy Cup, a machine learning application.</p>
+        <Typing.Delay ms={500} />
+        <p>Use your cursor to try and pick up the mug.</p>
+        <Typing.Delay ms={500} />
+        <p>A neural network will analyze the velocity and trajectory of the cursor<br />
+          to determine whether the mug is being picked up or accidentally spilled.</p>
+        <Typing.Delay ms={500} />
+        <p>Press the spacebar or click the reset button to start over.</p>
+        <Typing.Delay ms={500} />
+      </Typing>*/}
+        <p>Welcome to Sippy Cup, a machine learning application.</p>
+        <p>Use your cursor to try and pick up the mug.</p>
+        <p>A neural network will analyze the velocity and trajectory of the cursor<br />
+          to determine whether the mug is being picked up or accidentally spilled.</p>
+        <p>Press the spacebar or click the reset button to start over.</p>
         <AwesomeButton className="buttonReset" type="primary">Reset</AwesomeButton>
         <div className="canvas"
              onMouseMove={this._onMouseMove.bind(this)}
