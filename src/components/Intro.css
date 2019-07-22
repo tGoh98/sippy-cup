@@ -9,12 +9,17 @@ div {
 .centered {
   margin: auto;
   width: 50%;
-  /* height: 50%; */
-  /* padding: 10px; */
 }
 
 .header {
   font-family: monospace;
   font-size: 50px;
   text-align: center;
+}
+
+.link {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border-style: solid;
 }
