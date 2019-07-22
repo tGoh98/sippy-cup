@@ -26,9 +26,12 @@ button:hover {
 }
 
 .header {
-  font-family: monospace;
   font-size: 50px;
   text-align: center;
+}
+
+.content {
+  padding: 100px;
 }
 
 /* .link {
