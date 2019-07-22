@@ -1,5 +1,6 @@
 body {
   cursor: url('../assets/handCursor.png') 10 10, auto;
+  font-family: monospace;
 }
 
 a:hover {

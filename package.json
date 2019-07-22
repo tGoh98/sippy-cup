@@ -5,6 +5,7 @@
   "dependencies": {
     "@tensorflow/tfjs": "^1.2.3",
     "react": "^16.8.6",
+    "react-awesome-button": "^6.1.2",
     "react-dom": "^16.8.6",
     "react-particles-js": "^2.6.0",
     "react-router-dom": "^5.0.1",

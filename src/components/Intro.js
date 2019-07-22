@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './Intro.css';
 import ParticleComponent from './ParticleComponent';
 import Typing from 'react-typing-animation';
+import { AwesomeButton } from 'react-awesome-button';
+import "./buttonStyles.css";
 
 
 export default class Intro extends Component {
@@ -16,8 +18,8 @@ export default class Intro extends Component {
           asdf
           <Typing.Delay ms={10000} />
         </Typing>
-        <div className="link">
-          <Link style={{ textDecoration: 'none' }} to='/home'>next</Link>
+        <div className="centered">
+          <AwesomeButton size={150} type="primary"><Link style={{ textDecoration: 'none', color: 'black' }} to='/home'>Begin</Link></AwesomeButton>
         </div>
       </div>
     );
