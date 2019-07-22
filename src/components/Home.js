@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Mug from './Mug';
+import MouseMug from './MouseMug';
+import blank from '../assets/blank.png';
+import mugSpilled from '../assets/mugSpilled.png';
 import * as tf from '@tensorflow/tfjs';
 import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
@@ -108,11 +111,23 @@ export default class App extends Component {
         <p>A neural network will analyze the velocity and trajectory of the cursor<br />
           to determine whether the mug is being picked up or accidentally spilled.</p>
         <p>Press the spacebar or click the reset button to start over.</p>
-        <AwesomeButton className="buttonReset" type="primary">Reset</AwesomeButton>
+        <AwesomeButton className="buttonReset" type="primary" onPress={() => this.setState({res: 'none'})}>Reset</AwesomeButton>
         <div className="canvas"
              onMouseMove={this._onMouseMove.bind(this)}
         >
-          <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
+          { this.state.res === 'none' &&
+            <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
+          }
+          { this.state.res === 'hold' &&
+            <div>
+              <img className="CenterImg" src={blank} alt="blank" />
+              <MouseMug posX={this.state.x} posY={this.state.y} />
+            </div>
+          }
+          { this.state.res === 'spill' &&
+            <img className="CenterImg" src={mugSpilled} alt="spilled mug" />
+          }
+
         </div>
         <p>Mouse coordinates: { x } { y }</p>
         <p>Result: { res }</p>
