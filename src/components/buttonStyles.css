@@ -46,6 +46,7 @@
   --button-default-height: 48px !important; /* HEIGHT */
   --button-default-font-size: 20px !important; /* FONT SIZE */
   --button-horizontal-padding: 40px !important; /* WIDTH */
+  float: right;
 }
 
 .aws-btn {

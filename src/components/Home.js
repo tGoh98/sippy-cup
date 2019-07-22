@@ -5,6 +5,7 @@ import Mug from './Mug';
 import * as tf from '@tensorflow/tfjs';
 import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
+import Typing from 'react-typing-animation';
 
 export default class App extends Component {
   constructor(props) {
@@ -87,15 +88,29 @@ export default class App extends Component {
   render() {
     const { x, y, res } = this.state;
     return (
-      <div
-        id="canvas"
-        onMouseMove={this._onMouseMove.bind(this)}
+      <div className="windowContent">
+        <Typing className="instructions"
+                speed={20}
+                >
+          <p>Welcome to Sippy Cup, a machine learning application.</p>
+          <Typing.Delay ms={500} />
+          <p>Use your cursor to try to pick up the mug.</p>
+          <Typing.Delay ms={500} />
+          <p>A neural network will analyze the velocity and trajectory of the cursor<br />
+            to determine whether the mug is being picked up or accidentally spilled.</p>
+          <Typing.Delay ms={500} />
+          <p>Press the spacebar or click the reset button to start over.</p>
+          <Typing.Delay ms={500} />
+        </Typing>
+        <AwesomeButton className="buttonReset" type="primary">Reset</AwesomeButton>
+        <div className="canvas"
+             onMouseMove={this._onMouseMove.bind(this)}
         >
-        <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
+          <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
+        </div>
         <p>Mouse coordinates: { x } { y }</p>
         <p>Result: { res }</p>
-        <Link className="pathLink" to='/'>go back</Link><br />
-        <AwesomeButton className="buttonReset" type="primary">Reset</AwesomeButton>
+        <Link className="pathLink" to='/'>go back</Link>
       </div>
     );
   };
