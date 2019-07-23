@@ -17,10 +17,11 @@ export default class App extends Component {
 
     this.state = { x: 0,
                   y: 0,
-                  mousePosArr: Array(300).fill(0), // change to 200
+                  mousePosArr: Array(300).fill(0), // Adjust num tracked here
                   res: 'none',
                   model: '',
-                  showContent: false
+                  showContent: false,
+                  numWritten: 0
                  };
   }
 
@@ -29,7 +30,7 @@ export default class App extends Component {
     this.timerID = setInterval(() => this.sampleMousePos(), 10); // Adjust sampling interval here
 
     // Load js model
-    this.model = await tf.loadLayersModel('http://d2wg2diq3xdth6.cloudfront.net/ModelJS/model.json');
+    this.model = await tf.loadLayersModel('http://d2wg2diq3xdth6.cloudfront.net/ModelJSOld/model.json');
   }
 
   componentWillUnmount() {
@@ -64,6 +65,9 @@ export default class App extends Component {
       body: JSON.stringify({mousePos: mousePosArr})
     }).then(response => response.json())
       .then(json => console.log(json));
+
+    // Increment counter
+    this.setState({numWritten: this.state.numWritten+1 })
   }
 
   detRes(mousePosArr) {
@@ -91,7 +95,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { x, y, res } = this.state;
+    const { x, y, res, numWritten } = this.state;
     return (
       <div className="windowContent">
       <Typing className="instructions"
@@ -115,6 +119,7 @@ export default class App extends Component {
             >
             { this.state.res === 'none' &&
               <Mug mouseEntered={() => this.detRes(this.state.mousePosArr)}/>
+              // <Mug mouseEntered={() => this.addMouseCoords(this.state.mousePosArr)}/>
             }
             { this.state.res === 'hold' &&
               <div>
@@ -128,6 +133,7 @@ export default class App extends Component {
             <br />
             <p style={{ textAlign: 'center' }}>Result: { res }</p>
             </div>
+            <p>numWritten: { numWritten }</p>
           </div>
         }
         {/*

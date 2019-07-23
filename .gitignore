@@ -23,6 +23,7 @@ hold_testing.json
 hold_training.json
 spill_testing.json
 spill_training.json
+dbEmpty.json
 
 npm-debug.log*
 yarn-debug.log*
