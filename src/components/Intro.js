@@ -20,7 +20,7 @@ export default class Intro extends Component {
     return (
       <div className="content">
         <div className="centered">
-          <ParticleComponent />
+          {/*<ParticleComponent />*/}
           <Typing className="header"
                   speed={80}
 									onFinishedTyping={() => this.setState({showButton:true})}
