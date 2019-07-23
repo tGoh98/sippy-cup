@@ -19,6 +19,10 @@
 .env.production.local
 /env
 /.ipynb_checkpoints
+hold_testing.json
+hold_training.json
+spill_testing.json
+spill_training.json
 
 npm-debug.log*
 yarn-debug.log*
