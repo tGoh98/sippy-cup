@@ -11,6 +11,6 @@
 
 ## How to run
 1. Ensure that [node js](https://nodejs.org/en/) is installed on your system
-2. Download and extract the repository
-3. Open git bash, navigate to the repository, and run `npm install` and then `node server.js`
+2. Clone the repository
+3. Run `npm install` and then `npm start`
 4. The server should now be running on <https://localhost:3000>
