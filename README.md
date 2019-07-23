@@ -1,5 +1,5 @@
 # What is Sippy-Cup? 
-[Sippy-Cup](http://sippy-cup.herokuapp.com/) is a silly React/TensorFlow web application based on the idea that one could reduce the number of accidental coffee spills if a mug could distinguish whether the user is knocking the cup over or pikcing it up.
+[Sippy-Cup](http://sippy-cup.herokuapp.com/) is a silly React/TensorFlow web application based on the idea that one could reduce the number of accidental coffee spills if a mug could distinguish whether the user is knocking the cup over or picking it up.
 
 ## Features
 * Sequential Keras model created in Python and exported to TensorFlow.js
