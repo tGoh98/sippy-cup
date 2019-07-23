@@ -133,7 +133,7 @@ export default class App extends Component {
             <br />
             <p style={{ textAlign: 'center' }}>Result: { res }</p>
             </div>
-            <p>numWritten: { numWritten }</p>
+            {/*<p>numWritten: { numWritten }</p>*/}
           </div>
         }
         {/*
