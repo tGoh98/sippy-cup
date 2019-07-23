@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Particles from "react-particles-js";
 
-export default class ParticleComponent extends Component {
+export default class Particle extends Component {
   render() {
     return (
       <div>asdf</div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Intro.css';
-import ParticleComponent from './ParticleComponent';
+import Particle from './Particle';
 import Typing from 'react-typing-animation';
 import { AwesomeButton } from 'react-awesome-button';
 // import MouseMug from './MouseMug';
@@ -20,7 +20,7 @@ export default class Intro extends Component {
     return (
       <div className="content">
         <div className="centered">
-          <ParticleComponent />
+          <Particle />
           <Typing className="header"
                   speed={80}
 									onFinishedTyping={() => this.setState({showButton:true})}
