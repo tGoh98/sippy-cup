@@ -4,7 +4,7 @@ import './Home.css';
 import Mug from './Mug';
 import MouseMug from './MouseMug';
 import blank from '../assets/blank.png';
-import mugSpilled from '../assets/mugSpilled.png';
+import mugSpill from '../assets/mugSpill.png';
 import * as tf from '@tensorflow/tfjs';
 import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
@@ -123,14 +123,15 @@ export default class App extends Component {
               </div>
             }
             { this.state.res === 'spill' &&
-              <img className="CenterImg" src={mugSpilled} alt="spilled mug" />
+              <img className="CenterImg" src={mugSpill} alt="spilled mug" />
             }
+            <br />
+            <p style={{ textAlign: 'center' }}>Result: { res }</p>
             </div>
           </div>
         }
         {/*
           <p>Mouse coordinates: { x } { y }</p>
-          <p>Result: { res }</p>
           <Link className="pathLink" to='/'>go back</Link>
         */}
       </div>
