@@ -2,6 +2,9 @@
   "name": "sippy-cup",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.16.0"
+  },
   "dependencies": {
     "@tensorflow/tfjs": "^1.2.3",
     "react": "^16.8.6",
