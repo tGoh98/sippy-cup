@@ -30,7 +30,7 @@ export default class App extends Component {
     this.timerID = setInterval(() => this.sampleMousePos(), 10); // Adjust sampling interval here
 
     // Load js model
-    this.model = await tf.loadLayersModel('http://d2wg2diq3xdth6.cloudfront.net/ModelJSOld/model.json');
+    this.model = await tf.loadLayersModel('https://d2wg2diq3xdth6.cloudfront.net/ModelJSOld/model.json');
   }
 
   componentWillUnmount() {
