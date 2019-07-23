@@ -4,7 +4,6 @@ import './Intro.css';
 import Particle from './Particle';
 import Typing from 'react-typing-animation';
 import { AwesomeButton } from 'react-awesome-button';
-// import MouseMug from './MouseMug';
 import "./buttonStyles.css";
 import "react-awesome-button/dist/styles.css"
 
