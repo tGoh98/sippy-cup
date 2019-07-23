@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Intro.css';
-import ParticleComponent from './ParticleComponent';
+// import ParticleComponent from './ParticleComponent';
 import Typing from 'react-typing-animation';
 import { AwesomeButton } from 'react-awesome-button';
 import MouseMug from './MouseMug';
