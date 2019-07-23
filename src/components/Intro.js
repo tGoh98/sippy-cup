@@ -4,6 +4,7 @@ import './Intro.css';
 import ParticleComponent from './ParticleComponent';
 import Typing from 'react-typing-animation';
 import { AwesomeButton } from 'react-awesome-button';
+import MouseMug from './MouseMug';
 import "./buttonStyles.css";
 import "react-awesome-button/dist/styles.css"
 
@@ -30,7 +31,8 @@ export default class Intro extends Component {
           { this.state.showButton &&
 						<div className="centered fadein">
 						<AwesomeButton className="buttonBegin" type="primary"><Link className="linkText" to='/home'>Begin</Link></AwesomeButton>
-          	</div>
+						<MouseMug />
+						</div>
 					}
         </div>
       </div>
