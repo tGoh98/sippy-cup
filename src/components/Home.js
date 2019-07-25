@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Mug from './Mug';
 import MouseMug from './MouseMug';
+import SpilledMug from './SpilledMug';
 import blank from '../assets/blank.png';
 import mugSpill from '../assets/mugSpill.png';
 import * as tf from '@tensorflow/tfjs';
@@ -11,7 +12,7 @@ import "./buttonStyles.css";
 import "react-awesome-button/dist/styles.css"
 import Typing from 'react-typing-animation';
 
-export default class App extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -128,7 +129,7 @@ export default class App extends Component {
               </div>
             }
             { this.state.res === 'spill' &&
-              <img className="CenterImg" src={mugSpill} alt="spilled mug" />
+              <SpilledMug className="CenterImg" />
             }
             <br />
             <p style={{ textAlign: 'center' }}>Result: { res }</p>
