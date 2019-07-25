@@ -8,3 +8,9 @@
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.MugImg {
+  display: block;
+  margin: 0 auto;
+  max-width: 15%;
+}

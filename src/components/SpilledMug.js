@@ -29,7 +29,7 @@ export default class SpilledMug extends Component {
   }
   render() {
     return (
-      <img className="CenterImg" src={this.state.url} alt="cup" />
+      <img className="MugImg" src={this.state.url} alt="cup" />
     );
   };
 }

@@ -5,7 +5,6 @@ import Mug from './Mug';
 import MouseMug from './MouseMug';
 import SpilledMug from './SpilledMug';
 import blank from '../assets/blank.png';
-import mugSpill from '../assets/mugSpill.png';
 import * as tf from '@tensorflow/tfjs';
 import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
@@ -124,12 +123,12 @@ export default class Home extends Component {
             }
             { this.state.res === 'hold' &&
               <div>
-                <img className="CenterImg" src={blank} alt="blank" />
+                <img className="MugImg" src={blank} alt="blank" />
                 <MouseMug posX={this.state.x} posY={this.state.y} />
               </div>
             }
             { this.state.res === 'spill' &&
-              <SpilledMug className="CenterImg" />
+              <SpilledMug className="MugImg" />
             }
             <br />
             <p style={{ textAlign: 'center' }}>Result: { res }</p>
