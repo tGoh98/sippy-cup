@@ -10,6 +10,7 @@ import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
 import "react-awesome-button/dist/styles.css"
 import Typing from 'react-typing-animation';
+// import model from '../assets/ModelJSOld/model.json';
 
 export default class Home extends Component {
   constructor(props) {
@@ -30,7 +31,9 @@ export default class Home extends Component {
     this.timerID = setInterval(() => this.sampleMousePos(), 10); // Adjust sampling interval here
 
     // Load js model
-    this.model = await tf.loadLayersModel('https://d2wg2diq3xdth6.cloudfront.net/ModelJSOld/model.json');
+    // this.model = await tf.loadLayersModel('https://d2wg2diq3xdth6.cloudfront.net/ModelJSOld/model.json');
+    // this.model = await tf.loadLayersModel('http://scrawny-crowd.surge.sh/model.json');
+    this.model = await tf.loadLayersModel('../assets/ModelJSOld/model.json');
   }
 
   componentWillUnmount() {
