@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './Home.css';
 import Mug from './Mug';
 import MouseMug from './MouseMug';
@@ -10,7 +10,6 @@ import { AwesomeButton } from 'react-awesome-button';
 import "./buttonStyles.css";
 import "react-awesome-button/dist/styles.css"
 import Typing from 'react-typing-animation';
-// import model from '../assets/ModelJSOld/model.json';
 
 export default class Home extends Component {
   constructor(props) {
@@ -31,9 +30,7 @@ export default class Home extends Component {
     this.timerID = setInterval(() => this.sampleMousePos(), 10); // Adjust sampling interval here
 
     // Load js model
-    // this.model = await tf.loadLayersModel('https://d2wg2diq3xdth6.cloudfront.net/ModelJSOld/model.json');
-    // this.model = await tf.loadLayersModel('http://scrawny-crowd.surge.sh/model.json');
-    this.model = await tf.loadLayersModel('../assets/ModelJSOld/model.json');
+    this.model = await tf.loadLayersModel('../assets/ModelJSOld/model.json'); // Adjust source here
   }
 
   componentWillUnmount() {
@@ -45,7 +42,6 @@ export default class Home extends Component {
     this.state.mousePosArr.push(this.state.x, this.state.y);
     this.state.mousePosArr.shift();
     this.state.mousePosArr.shift();
-    // console.log(this.state.mousePosArr);
   }
 
   _onMouseMove(e) {
@@ -98,7 +94,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { x, y, res, numWritten } = this.state;
+    const { res } = this.state;
     return (
       <div className="windowContent">
       <Typing className="instructions"
@@ -136,11 +132,10 @@ export default class Home extends Component {
             <br />
             <p style={{ textAlign: 'center' }}>Result: { res }</p>
             </div>
-            {/*<p>numWritten: { numWritten }</p>*/}
+            {/*<p>numWritten: { this.state.numWritten }</p>*/}
           </div>
         }
         {/*
-          <p>Mouse coordinates: { x } { y }</p>
           <Link className="pathLink" to='/'>go back</Link>
         */}
       </div>
