@@ -30,7 +30,7 @@ export default class Home extends Component {
     this.timerID = setInterval(() => this.sampleMousePos(), 10); // Adjust sampling interval here
 
     // Load js model
-    this.model = await tf.loadLayersModel('../assets/ModelJSOld/model.json'); // Adjust source here
+    this.model = await tf.loadLayersModel('./ModelJSOld/model.json'); // Adjust source here
   }
 
   componentWillUnmount() {
